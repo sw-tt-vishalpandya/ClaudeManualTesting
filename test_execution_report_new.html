@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Execution Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .summary {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .scenario {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 5px;
+        }
+        .step.pass {
+            color: green;
+        }
+        .step.fail {
+            color: red;
+        }
+        .validation {
+            color: #666;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Authentix Software Test Execution Report</h1>
+        <p>Execution Date: August 13, 2025</p>
+    </div>
+
+    <div class="summary">
+        <h2>Test Summary</h2>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Total Scenarios</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Scenarios Passed</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Scenarios Failed</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Pass Rate</td>
+                <td>100%</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="scenario">
+        <h2>Scenario 1: Verify Login Scenario</h2>
+        <div class="step pass">✓ Navigate to login page</div>
+        <div class="step pass">✓ Enter Username: mayur.tilva@atxportal.com</div>
+        <div class="step pass">✓ Enter Password: Softweb#123</div>
+        <div class="step pass">✓ Click Sign In</div>
+        <div class="step pass">✓ Click Yes on confirmation</div>
+        <div class="step pass">✓ Verify landing on Select Program page</div>
+        <div class="validation">All steps completed successfully</div>
+    </div>
+
+    <div class="scenario">
+        <h2>Scenario 2: Verify Add Shipment Functionality</h2>
+        <h3>Basic Information:</h3>
+        <div class="step pass">✓ Select HCL program</div>
+        <div class="step pass">✓ Navigate to Shipments through Marker Inventory</div>
+        <div class="step pass">✓ Click Add Shipment</div>
+        <div class="step pass">✓ Enter Invoice Number: INV_98765</div>
+        <div class="step pass">✓ Set Date Shipped: 2025/08/13</div>
+        <div class="step pass">✓ Set Estimated Delivery Date: 2025/08/20</div>
+        <div class="step pass">✓ Select Shipped To: 410Location</div>
+        <div class="step pass">✓ Select Shipped From: 452Location</div>
+        <div class="step pass">✓ Add Comments and Save</div>
+
+        <h3>Expected Items:</h3>
+        <div class="step pass">✓ Add Expected Item</div>
+        <div class="step pass">✓ Select Marker Blend: GY-08</div>
+        <div class="step pass">✓ Enter Quantity: 300</div>
+        <div class="step pass">✓ Enter Units: 100</div>
+
+        <h3>Receipt Details:</h3>
+        <div class="step pass">✓ Set Receipt Date: 2025/08/13</div>
+        <div class="step pass">✓ Complete required checkboxes</div>
+        <div class="step pass">✓ Add comments and save</div>
+
+        <h3>Receipt Drums:</h3>
+        <div class="step pass">✓ Add Receipt Drum: 6543</div>
+        <div class="step pass">✓ Complete drum details</div>
+        <div class="step pass">✓ Enter weights and verify calculations</div>
+
+        <h3>Documents:</h3>
+        <div class="step pass">✓ Upload Detox.jpeg</div>
+        <div class="validation">Shipment created successfully with all required details</div>
+    </div>
+
+    <div class="scenario">
+        <h2>Scenario 3: Verify Add Decanting</h2>
+        <h3>Decanting Details:</h3>
+        <div class="step pass">✓ Navigate to Decantings section</div>
+        <div class="step pass">✓ Click Add Decanting</div>
+        <div class="step pass">✓ Enter Source Container Number: 6543</div>
+        <div class="step pass">✓ Verify Source Container Type auto-population (200L)</div>
+        <div class="step pass">✓ Set Date/Time Decanted: 2025/08/13 12:00 PM</div>
+        <div class="step pass">✓ Select Location: 410Location</div>
+        <div class="step pass">✓ Verify Marker Blend auto-population (Blend 1)</div>
+
+        <h3>Weight Information:</h3>
+        <div class="step pass">✓ Enter Before Weight: 700 kg</div>
+        <div class="step pass">✓ Enter After Weight: 500 kg</div>
+        <div class="step pass">✓ Verify Calculated Change: 200 kg</div>
+
+        <h3>Status and Comments:</h3>
+        <div class="step pass">✓ Mark Container as damaged</div>
+        <div class="step pass">✓ Mark Container as leaking</div>
+        <div class="step pass">✓ Mark Seal as damaged</div>
+        <div class="step pass">✓ Add Comments</div>
+        <div class="step pass">✓ Add Warning Comments</div>
+        <div class="step pass">✓ Save Decanting Record</div>
+
+        <div class="validation">Decanting record created successfully with all validations passed</div>
+    </div>
+</body>
+</html>
