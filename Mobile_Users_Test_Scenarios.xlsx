@@ -1,0 +1,140 @@
+Test Case ID,Module,Test Scenario,Test Steps,Test Data,Expected Results,Actual Results,Status,Comments
+
+MU_001,Mobile Users,Verify successful login and navigation to Mobile Users section,"1. Navigate to login page
+2. Enter valid username
+3. Enter valid password
+4. Click Sign In
+5. Click Yes on confirmation
+6. Select Program
+7. Click on Marker Inventory
+8. Click on Mobile Users","URL: authentixsoftweb-gzbmbbbzabcugpaw.centralus-01.azurewebsites.net
+Username: mayur.tilva@atxportal.com
+Password: Softweb#123","1. Login page should load
+2. Username field should accept input
+3. Password field should accept input
+4. System should process login
+5. Confirmation dialog should appear
+6. Program selection page should display
+7. Marker Inventory page should open
+8. Mobile Users section should display",,,
+
+MU_002,Mobile Users,Verify Add New Mobile User functionality with valid data,"1. Click Add Mobile User button
+2. Enter First Name
+3. Enter Last Name
+4. Enter Mobile Number
+5. Enter Email Address
+6. Select Role
+7. Select Program Access
+8. Click Save","First Name: John
+Last Name: Doe
+Mobile: +1234567890
+Email: john.doe@example.com
+Role: Standard User
+Program: Select available program","1. Add Mobile User form should open
+2-5. All fields should accept input
+6. Role dropdown should show available options
+7. Program selection should be enabled
+8. User should be saved successfully",,,
+
+MU_003,Mobile Users,Verify Add Mobile User with missing mandatory fields,"1. Click Add Mobile User
+2. Leave mandatory fields empty
+3. Click Save","Leave First Name, Last Name, Mobile Number empty","1. Form should open
+2. System should highlight empty mandatory fields
+3. Error message should display for missing fields",,,
+
+MU_004,Mobile Users,Verify Mobile User with invalid email format,"1. Click Add Mobile User
+2. Fill all fields
+3. Enter invalid email format
+4. Click Save","Email: invalid.email@","1. Form should open
+2. Fields should accept input
+3. System should validate email format
+4. Error message for invalid email",,,
+
+MU_005,Mobile Users,Verify Mobile User with invalid phone number format,"1. Click Add Mobile User
+2. Fill all fields
+3. Enter invalid phone format
+4. Click Save","Phone: 123","1. Form should open
+2. Fields should accept input
+3. System should validate phone format
+4. Error message for invalid phone",,,
+
+MU_006,Mobile Users,Verify edit existing Mobile User functionality,"1. Select existing user
+2. Click Edit
+3. Modify fields
+4. Click Save","Update:
+First Name: Jane
+Last Name: Smith","1. User should be selectable
+2. Edit form should open
+3. Fields should be editable
+4. Changes should save successfully",,,
+
+MU_007,Mobile Users,Verify delete Mobile User functionality,"1. Select existing user
+2. Click Delete
+3. Confirm deletion","Select any existing user","1. User should be selectable
+2. Delete confirmation should appear
+3. User should be deleted successfully",,,
+
+MU_008,Mobile Users,Verify duplicate email address validation,"1. Click Add Mobile User
+2. Enter details with existing email
+3. Click Save","Email: Use an already registered email","1. Form should open
+2. Fields should accept input
+3. Error message for duplicate email",,,
+
+MU_009,Mobile Users,Verify duplicate mobile number validation,"1. Click Add Mobile User
+2. Enter details with existing mobile
+3. Click Save","Mobile: Use an already registered number","1. Form should open
+2. Fields should accept input
+3. Error message for duplicate mobile",,,
+
+MU_010,Mobile Users,Verify search functionality,"1. Enter search term
+2. Check results
+3. Clear search","Search terms:
+- First name
+- Last name
+- Email
+- Mobile number","1. Search field should accept input
+2. Relevant results should display
+3. Clear should reset results",,,
+
+MU_011,Mobile Users,Verify filter functionality,"1. Click filter options
+2. Select filters
+3. Apply filters
+4. Clear filters","Filter by:
+- Role
+- Program Access
+- Status","1. Filter options should display
+2. Filters should be selectable
+3. Results should filter accordingly
+4. Clear should reset results",,,
+
+MU_012,Mobile Users,Verify sort functionality,"1. Click column headers
+2. Check sorting order
+3. Toggle sort direction","Sort by:
+- Name
+- Email
+- Mobile
+- Role
+- Program","1. Columns should be sortable
+2. Records should sort ascending
+3. Toggle should sort descending",,,
+
+MU_013,Mobile Users,Verify pagination,"1. Add multiple users
+2. Navigate through pages
+3. Change items per page","Add more than 10 users","1. Multiple pages should exist
+2. Page navigation should work
+3. Items per page should update",,,
+
+MU_014,Mobile Users,Verify role-based access restrictions,"1. Login with different role users
+2. Check Mobile Users access
+3. Check action permissions","Test with:
+- Admin user
+- Standard user
+- Limited user","1. Login should succeed
+2. Access should match role
+3. Actions should be restricted by role",,,
+
+MU_015,Mobile Users,Verify program access assignment,"1. Add new user
+2. Assign multiple programs
+3. Save and verify access","Select multiple available programs","1. Form should open
+2. Multiple programs should be selectable
+3. Access should save correctly",,,
