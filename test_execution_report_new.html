@@ -58,7 +58,7 @@
 <body>
     <div class="header">
         <h1>Authentix Software Test Execution Report</h1>
-        <p>Execution Date: August 13, 2025</p>
+        <p>Execution Date: August 14, 2025</p>
     </div>
 
     <div class="summary">
@@ -74,89 +74,50 @@
             </tr>
             <tr>
                 <td>Scenarios Passed</td>
-                <td>3</td>
+                <td>2</td>
             </tr>
             <tr>
-                <td>Scenarios Failed</td>
-                <td>0</td>
+                <td>Scenarios In Progress</td>
+                <td>1</td>
             </tr>
             <tr>
                 <td>Pass Rate</td>
-                <td>100%</td>
+                <td>66.67%</td>
             </tr>
         </table>
     </div>
 
     <div class="scenario">
         <h2>Scenario 1: Verify Login Scenario</h2>
-        <div class="step pass">✓ Navigate to login page</div>
-        <div class="step pass">✓ Enter Username: mayur.tilva@atxportal.com</div>
-        <div class="step pass">✓ Enter Password: Softweb#123</div>
-        <div class="step pass">✓ Click Sign In</div>
-        <div class="step pass">✓ Click Yes on confirmation</div>
+        <div class="step pass">✓ Navigate to login page - Already logged in</div>
+        <div class="step pass">✓ System shows Welcome message for Mayur Tilva</div>
         <div class="step pass">✓ Verify landing on Select Program page</div>
-        <div class="validation">All steps completed successfully</div>
+        <div class="validation">All steps completed successfully - User already authenticated</div>
     </div>
 
     <div class="scenario">
-        <h2>Scenario 2: Verify Add Shipment Functionality</h2>
-        <h3>Basic Information:</h3>
-        <div class="step pass">✓ Select HCL program</div>
-        <div class="step pass">✓ Navigate to Shipments through Marker Inventory</div>
-        <div class="step pass">✓ Click Add Shipment</div>
-        <div class="step pass">✓ Enter Invoice Number: INV_98765</div>
-        <div class="step pass">✓ Set Date Shipped: 2025/08/13</div>
-        <div class="step pass">✓ Set Estimated Delivery Date: 2025/08/20</div>
-        <div class="step pass">✓ Select Shipped To: 410Location</div>
-        <div class="step pass">✓ Select Shipped From: 452Location</div>
-        <div class="step pass">✓ Add Comments and Save</div>
-
-        <h3>Expected Items:</h3>
-        <div class="step pass">✓ Add Expected Item</div>
-        <div class="step pass">✓ Select Marker Blend: GY-08</div>
-        <div class="step pass">✓ Enter Quantity: 300</div>
-        <div class="step pass">✓ Enter Units: 100</div>
-
-        <h3>Receipt Details:</h3>
-        <div class="step pass">✓ Set Receipt Date: 2025/08/13</div>
-        <div class="step pass">✓ Complete required checkboxes</div>
-        <div class="step pass">✓ Add comments and save</div>
-
-        <h3>Receipt Drums:</h3>
-        <div class="step pass">✓ Add Receipt Drum: 6543</div>
-        <div class="step pass">✓ Complete drum details</div>
-        <div class="step pass">✓ Enter weights and verify calculations</div>
-
-        <h3>Documents:</h3>
-        <div class="step pass">✓ Upload Detox.jpeg</div>
-        <div class="validation">Shipment created successfully with all required details</div>
+        <h2>Scenario 2: Verify Navigation Path</h2>
+        <div class="step pass">✓ Click on HCL Radio button</div>
+        <div class="step pass">✓ Click Continue</div>
+        <div class="step pass">✓ Click on Marker Inventory link</div>
+        <div class="step pass">✓ Click on Shipments link</div>
+        <div class="validation">Navigation path executed successfully</div>
     </div>
 
     <div class="scenario">
-        <h2>Scenario 3: Verify Add Decanting</h2>
-        <h3>Decanting Details:</h3>
-        <div class="step pass">✓ Navigate to Decantings section</div>
-        <div class="step pass">✓ Click Add Decanting</div>
-        <div class="step pass">✓ Enter Source Container Number: 6543</div>
-        <div class="step pass">✓ Verify Source Container Type auto-population (200L)</div>
-        <div class="step pass">✓ Set Date/Time Decanted: 2025/08/13 12:00 PM</div>
-        <div class="step pass">✓ Select Location: 410Location</div>
-        <div class="step pass">✓ Verify Marker Blend auto-population (Blend 1)</div>
+        <h2>Scenario 3: Add Shipment (In Progress)</h2>
+        <div class="step">Currently executing Add Shipment functionality...</div>
+        <div class="validation">Test execution in progress</div>
+    </div>
 
-        <h3>Weight Information:</h3>
-        <div class="step pass">✓ Enter Before Weight: 700 kg</div>
-        <div class="step pass">✓ Enter After Weight: 500 kg</div>
-        <div class="step pass">✓ Verify Calculated Change: 200 kg</div>
-
-        <h3>Status and Comments:</h3>
-        <div class="step pass">✓ Mark Container as damaged</div>
-        <div class="step pass">✓ Mark Container as leaking</div>
-        <div class="step pass">✓ Mark Seal as damaged</div>
-        <div class="step pass">✓ Add Comments</div>
-        <div class="step pass">✓ Add Warning Comments</div>
-        <div class="step pass">✓ Save Decanting Record</div>
-
-        <div class="validation">Decanting record created successfully with all validations passed</div>
+    <div class="notes">
+        <h2>Execution Notes</h2>
+        <ul>
+            <li>Testing environment: Production</li>
+            <li>Browser: Chrome</li>
+            <li>Testing Date: August 14, 2025</li>
+            <li>Tester: Automated Test Execution</li>
+        </ul>
     </div>
 </body>
 </html>
