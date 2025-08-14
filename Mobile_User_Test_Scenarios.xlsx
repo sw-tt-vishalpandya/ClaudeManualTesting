@@ -1,131 +1,248 @@
-Test ID,Section,Test Scenario,Test Steps,Test Data,Expected Result,Status,Comments
-MU_001,Login & Navigation,Verify navigation to Create User form,"1. Navigate to login page
-2. Enter username
-3. Enter password
+Test Case ID,Module,Test Scenario,Test Steps,Test Data,Expected Results,Actual Results,Status
+
+MU_001,Navigation,Verify Login and Navigation to Create User Form,"1. Navigate to URL
+2. Enter Username
+3. Enter Password
 4. Click Sign In
 5. Click Yes
-6. Select Program (HCL)
+6. Select HCL Program
 7. Click Continue
 8. Click Marker Inventory
 9. Click Mobile Users
 10. Click Create User","URL: authentixsoftweb-gzbmbbbzabcugpaw.centralus-01.azurewebsites.net
 Username: mayur.tilva@atxportal.com
-Password: Softweb#123","1. Login successful
-2. Program selection page displayed
-3. Mobile Users page opens
-4. Create User form displayed",,
-MU_002,Personal Info,Verify First Name validations,"1. Leave First Name empty
-2. Enter special characters
-3. Enter numbers
-4. Enter single character
-5. Enter very long name
-6. Enter valid name","Empty: ''
-Special: '@#$%'
-Numbers: '123'
-Single: 'A'
-Long: 'Abcdefghijklmnopqrstuvwxyz'
-Valid: 'John'","1. Required error shown
-2. Special chars rejected
-3. Numbers rejected
-4. Min length error
-5. Max length error
-6. Valid name accepted",,
-MU_003,Personal Info,Verify Last Name validations,"1. Leave Last Name empty
-2. Enter special characters
-3. Enter numbers
-4. Enter single character
-5. Enter very long name
-6. Enter valid name","Empty: ''
-Special: '@#$%'
-Numbers: '123'
-Single: 'B'
-Long: 'Abcdefghijklmnopqrstuvwxyz'
-Valid: 'Smith'","1. Required error shown
-2. Special chars rejected
-3. Numbers rejected
-4. Min length error
-5. Max length error
-6. Valid name accepted",,
-MU_004,Contact Info,Verify Email validations,"1. Leave Email empty
-2. Enter invalid formats
+Password: Softweb#123","1. Login page loads
+2. Login successful
+3. Program selection page displays
+4. HCL program selected
+5. Mobile Users page opens
+6. Create User form displays",,
+
+MU_002,Create User Form,Verify First Name field validations,"1. Leave First Name empty and try to save
+2. Enter special characters (@#$%)
+3. Enter numbers (123)
+4. Enter very short name (A)
+5. Enter very long name (50+ chars)
+6. Enter valid name
+7. Enter name with spaces
+8. Enter name with hyphens","1. Empty: ''
+2. Special chars: '@#$%'
+3. Numbers: '123'
+4. Short: 'A'
+5. Long: 'Pneumonoultramicroscopicsilicovolcanoconiosis'
+6. Valid: 'John'
+7. Spaced: 'John Peter'
+8. Hyphenated: 'Mary-Jane'","1. Required field error
+2. Special characters not allowed
+3. Numbers not allowed
+4. Minimum length error
+5. Maximum length error
+6. Input accepted
+7. Spaces accepted
+8. Hyphens accepted",,
+
+MU_003,Create User Form,Verify Last Name field validations,"1. Leave Last Name empty and try to save
+2. Enter special characters (@#$%)
+3. Enter numbers (123)
+4. Enter very short name (B)
+5. Enter very long name (50+ chars)
+6. Enter valid name
+7. Enter name with spaces
+8. Enter name with hyphens","1. Empty: ''
+2. Special chars: '@#$%'
+3. Numbers: '123'
+4. Short: 'B'
+5. Long: 'Pneumonoultramicroscopicsilicovolcanoconiosis'
+6. Valid: 'Smith'
+7. Spaced: 'Van Dyke'
+8. Hyphenated: 'Smith-Jones'","1. Required field error
+2. Special characters not allowed
+3. Numbers not allowed
+4. Minimum length error
+5. Maximum length error
+6. Input accepted
+7. Spaces accepted
+8. Hyphens accepted",,
+
+MU_004,Create User Form,Verify Email field validations,"1. Leave Email empty
+2. Enter invalid email formats
 3. Enter existing email
-4. Enter valid new email","Empty: ''
-Invalid:
-- 'test@'
-- '@test.com'
-- 'test.com'
-Existing: 'existing@test.com'
-Valid: 'john.smith@test.com'","1. Required error shown
-2. Format error shown
-3. Duplicate error shown
-4. Valid email accepted",,
-MU_005,Contact Info,Verify Mobile Number validations,"1. Leave Mobile empty
+4. Enter valid email formats
+5. Enter email with special chars
+6. Enter very long email
+7. Enter email with subdomains
+8. Test different TLDs","1. Empty: ''
+2. Invalid: 'test@', '@domain.com', 'test.com'
+3. Existing: 'mayur.tilva@atxportal.com'
+4. Valid: 'test@example.com'
+5. Special: 'test.name+label@domain.com'
+6. Long: 'very.long.email.address@very.long.domain.name.com'
+7. Subdomain: 'test@sub.domain.com'
+8. TLDs: '.com', '.co.uk', '.info'","1. Required field error
+2. Invalid format error
+3. Duplicate email error
+4. Email accepted
+5. Special chars accepted
+6. Length limit enforced
+7. Subdomains accepted
+8. All valid TLDs accepted",,
+
+MU_005,Create User Form,Verify Mobile Number field validations,"1. Leave Mobile empty
 2. Enter letters
-3. Enter special chars
-4. Enter short number
-5. Enter long number
-6. Enter valid format","Empty: ''
-Letters: 'abc'
-Special: '#@*'
-Short: '123'
-Long: '12345678901234'
-Valid: '+1234567890'","1. Required error shown
-2. Letters rejected
-3. Special chars rejected
-4. Min length error
-5. Max length error
-6. Valid number accepted",,
-MU_006,Access Control,Verify Role selection,"1. Leave Role unselected
-2. Select Administrator
-3. Select Standard User
-4. Select Limited User
-5. Change selections","Roles:
-- Administrator
-- Standard User
-- Limited User","1. Required error shown
-2. Admin role selected
-3. Standard role selected
-4. Limited role selected
-5. Role changes saved",,
-MU_007,Access Control,Verify Program Access selection,"1. No program selected
+3. Enter special characters
+4. Enter invalid formats
+5. Enter short number
+6. Enter long number
+7. Enter valid formats
+8. Enter international formats","1. Empty: ''
+2. Letters: 'abcdef'
+3. Special: '#@*'
+4. Invalid: '123', '++1234'
+5. Short: '1234'
+6. Long: '12345678901234'
+7. Valid: '+1234567890'
+8. International: '+44 7911 123456'","1. Required field error
+2. Letters not allowed
+3. Only + allowed
+4. Format error shown
+5. Min length error
+6. Max length error
+7. Valid format accepted
+8. International format accepted",,
+
+MU_006,Create User Form,Verify Role Selection functionality,"1. Leave Role unselected
+2. Select each available role
+3. Change role selection
+4. Verify role permissions
+5. Save with different roles
+6. Test role restrictions","Roles to test:
+1. Administrator
+2. Standard User
+3. Limited User
+4. Custom roles if available","1. Required field error
+2. Each role selectable
+3. Role changes saved
+4. Permissions match role
+5. Save successful
+6. Restrictions enforced",,
+
+MU_007,Create User Form,Verify Program Access functionality,"1. Leave Program unselected
 2. Select single program
 3. Select multiple programs
 4. Select all programs
-5. Deselect programs","Programs:
-- HCL
-- IOCL
-- Other available programs","1. Required error shown
-2. Single program saved
-3. Multiple programs saved
-4. All programs saved
-5. Deselection works",,
-MU_008,Status Management,Verify Status toggle,"1. Check default status
-2. Toggle to Inactive
-3. Toggle to Active
-4. Save with each status","Status:
-- Active
-- Inactive","1. Default is Active
-2. Inactive selectable
-3. Active selectable
-4. Status saves correctly",,
-MU_009,Form Actions,Verify Save functionality,"1. Fill all required fields
+5. Deselect programs
+6. Test program dependencies","Programs to test:
+1. HCL
+2. IOCL
+3. Other available programs
+4. Multiple selections
+5. All programs","1. Required field error
+2. Single selection works
+3. Multiple selection works
+4. All programs selectable
+5. Deselection works
+6. Dependencies handled",,
+
+MU_008,Create User Form,Verify Status Toggle functionality,"1. Check default status
+2. Toggle status
+3. Save with Active status
+4. Save with Inactive status
+5. Test status restrictions","Status options:
+1. Active
+2. Inactive","1. Default is Active
+2. Toggle works
+3. Active status saved
+4. Inactive status saved
+5. Restrictions apply",,
+
+MU_009,Create User Form,Verify Form Submission - Valid Data,"1. Fill all required fields with valid data
 2. Fill optional fields
 3. Click Save
-4. Verify user list","Complete user data:
-First Name: 'John'
-Last Name: 'Smith'
-Email: 'john.smith@test.com'
-Mobile: '+1234567890'
-Role: 'Standard User'
-Program: 'HCL'
-Status: 'Active'","1. No validation errors
-2. Success message shown
-3. User added to list
-4. Data saved correctly",,
-MU_010,Form Actions,Verify Cancel functionality,"1. Fill some fields
-2. Click Cancel
-3. Check form state
-4. Verify user list","Partial user data","1. Form closes
-2. Data not saved
-3. Form resets
-4. List unchanged",,
+4. Verify success message
+5. Check user list update
+6. Verify all saved data","Complete valid user data:
+First Name: John
+Last Name: Smith
+Email: john.smith@test.com
+Mobile: +1234567890
+Role: Standard User
+Program: HCL
+Status: Active","1. All fields accept data
+2. Save button enabled
+3. Success message shown
+4. User added to list
+5. Data saved correctly
+6. All fields match input",,
+
+MU_010,Create User Form,Verify Form Submission - Invalid Data,"1. Fill some fields with invalid data
+2. Leave required fields empty
+3. Try to save
+4. Verify error messages
+5. Fix errors one by one
+6. Verify final save","Mix of valid and invalid data
+Missing required fields
+Incorrect formats","1. Validation errors shown
+2. Required field errors
+3. Save button disabled
+4. Clear error messages
+5. Errors clear on fix
+6. Save successful",,
+
+MU_011,Create User Form,Verify Form Reset/Cancel,"1. Fill form partially
+2. Click Cancel/Reset
+3. Verify form state
+4. Check user list
+5. Try new entry","Partial form data
+Valid and invalid inputs","1. Form clears
+2. No data saved
+3. Fields reset
+4. List unchanged
+5. Form ready for new entry",,
+
+MU_012,Create User Form,Verify Field Dependencies,"1. Test role-program dependencies
+2. Test status-role dependencies
+3. Check field interactions
+4. Verify conditional fields","Different combinations of:
+Roles
+Programs
+Status","1. Dependencies work
+2. Restrictions apply
+3. Fields interact correctly
+4. Conditions met",,
+
+MU_013,Create User Form,Verify Form Accessibility,"1. Test keyboard navigation
+2. Check tab order
+3. Test screen reader compatibility
+4. Verify error announcements
+5. Test field focus","Keyboard inputs
+Tab navigation
+Screen reader","1. Keyboard works
+2. Logical tab order
+3. Screen reader works
+4. Errors announced
+5. Focus indicators",,
+
+MU_014,Create User Form,Verify Form Responsiveness,"1. Test on different screen sizes
+2. Check mobile view
+3. Test touch interactions
+4. Verify field layouts
+5. Test orientation changes","Different screen sizes
+Mobile devices
+Touch inputs","1. Layout adapts
+2. Mobile friendly
+3. Touch works
+4. Fields readable
+5. Orientation handled",,
+
+MU_015,Create User Form,Verify Form Security,"1. Test input sanitization
+2. Check XSS prevention
+3. Test SQL injection
+4. Verify CSRF protection
+5. Test field restrictions","SQL injection attempts
+XSS scripts
+Special characters
+CSRF tokens","1. Inputs sanitized
+2. XSS prevented
+3. SQL injection blocked
+4. CSRF protected
+5. Restrictions work",,
