@@ -1,106 +1,167 @@
 Test Case ID,Module,Test Scenario,Test Steps,Test Data,Expected Results,Status,Comments
-MU_001,Mobile Users,Verify login and navigation to Mobile Users section,"1. Navigate to login page
-2. Enter valid username
-3. Enter valid password
-4. Click Sign In
-5. Click Yes on confirmation
-6. Select Program (HCL)
-7. Click Continue
-8. Click Marker Inventory
-9. Click Mobile Users","URL: authentixsoftweb-gzbmbbbzabcugpaw.centralus-01.azurewebsites.net
-Username: mayur.tilva@atxportal.com
-Password: Softweb#123","1. Login successful
-2. Program selection displayed
-3. Mobile Users page loaded
-4. User list grid visible",,
-MU_002,Mobile Users,Verify Create New Mobile User functionality,"1. Click Create User button
-2. Enter First Name
-3. Enter Last Name
-4. Enter Email
-5. Enter Mobile Number
-6. Select Role
-7. Select Program Access
-8. Click Save","First Name: John
-Last Name: Doe
-Email: john.doe@test.com
-Mobile: +1234567890
-Role: Standard User","1. User form opens
-2. All fields accept input
-3. Success message displays
-4. User appears in grid",,
-MU_003,Mobile Users,Verify required field validation,"1. Click Create User
-2. Leave mandatory fields empty
-3. Click Save","Leave First Name, Last Name, Email empty","1. Form shows validation errors
-2. Save button disabled
-3. Error messages displayed",,
-MU_004,Mobile Users,Verify email format validation,"1. Click Create User
-2. Enter invalid email format
-3. Click Save","Email: invalid.email","1. Email field shows error
-2. Save prevented
-3. Validation message shown",,
-MU_005,Mobile Users,Verify mobile number validation,"1. Click Create User
-2. Enter invalid phone format
-3. Click Save","Mobile: 123","1. Mobile field shows error
-2. Save prevented
-3. Validation message shown",,
-MU_006,Mobile Users,Verify user list sorting,"1. Click column headers
-2. Verify sort order
-3. Click again to reverse","Click Email Id, First Name, Last Name headers","1. List sorts ascending
-2. List sorts descending
-3. Sort indicator shown",,
-MU_007,Mobile Users,Verify search functionality,"1. Enter search term
-2. Check filtered results
-3. Clear search","Search terms:
-- Email
-- First Name
-- Last Name","1. Matching users shown
-2. Non-matching hidden
-3. Clear resets list",,
-MU_008,Mobile Users,Verify status filter,"1. Click Status dropdown
-2. Select different statuses
-3. Verify filtered list","Select:
-- All
+
+CU_001,Create User,Verify Create User form fields and layout,"1. Click Create User button
+2. Verify all form fields presence
+3. Verify field labels
+4. Verify required field indicators","N/A","Form should display:
+1. First Name field (required)
+2. Last Name field (required)
+3. Email field (required)
+4. Mobile Number field (required)
+5. Role dropdown (required)
+6. Program Access selection
+7. Status toggle
+8. Save button
+9. Cancel button",,
+
+CU_002,Create User,Verify First Name field validations,"1. Leave First Name empty
+2. Enter special characters
+3. Enter numbers
+4. Enter valid name
+5. Enter very long name","Test Data:
+- Empty: ''
+- Special chars: '@#$%'
+- Numbers: '123'
+- Valid: 'John'
+- Long: 50+ characters","1. Empty shows required error
+2. Special chars not allowed
+3. Numbers not allowed
+4. Valid name accepted
+5. Max length enforced",,
+
+CU_003,Create User,Verify Last Name field validations,"1. Leave Last Name empty
+2. Enter special characters
+3. Enter numbers
+4. Enter valid name
+5. Enter very long name","Test Data:
+- Empty: ''
+- Special chars: '@#$%'
+- Numbers: '123'
+- Valid: 'Smith'
+- Long: 50+ characters","1. Empty shows required error
+2. Special chars not allowed
+3. Numbers not allowed
+4. Valid name accepted
+5. Max length enforced",,
+
+CU_004,Create User,Verify Email field validations,"1. Leave Email empty
+2. Enter invalid format
+3. Enter valid format
+4. Enter existing email
+5. Enter very long email","Test Data:
+- Empty: ''
+- Invalid: 'test@'
+- Valid: 'test@example.com'
+- Existing: Use existing user email
+- Long: very.long.email.address@very.long.domain.com","1. Empty shows required error
+2. Invalid format error
+3. Valid format accepted
+4. Duplicate email error
+5. Max length enforced",,
+
+CU_005,Create User,Verify Mobile Number field validations,"1. Leave Mobile empty
+2. Enter letters
+3. Enter special characters
+4. Enter invalid format
+5. Enter valid format","Test Data:
+- Empty: ''
+- Letters: 'abc'
+- Special: '#+*'
+- Invalid: '123'
+- Valid: '+1234567890'","1. Empty shows required error
+2. Letters not allowed
+3. Only + allowed
+4. Format validation error
+5. Valid format accepted",,
+
+CU_006,Create User,Verify Role dropdown functionality,"1. Click Role dropdown
+2. Verify available roles
+3. Select each role
+4. Leave role unselected","Available Roles:
+- Administrator
+- Standard User
+- Limited User","1. Dropdown expands
+2. All roles listed
+3. Selection works
+4. Required error shown",,
+
+CU_007,Create User,Verify Program Access selection,"1. View program options
+2. Select single program
+3. Select multiple programs
+4. Deselect all programs","Programs:
+- HCL
+- IOCL
+- Other available programs","1. Programs listed
+2. Single selection works
+3. Multiple selection works
+4. At least one required",,
+
+CU_008,Create User,Verify Status toggle functionality,"1. Check default status
+2. Toggle status
+3. Save with each status","Status Options:
 - Active
-- Inactive","1. Dropdown works
-2. List filters correctly
-3. Status shown correctly",,
-MU_009,Mobile Users,Verify edit functionality,"1. Click edit icon
-2. Modify fields
-3. Save changes","Update:
-- First Name
-- Last Name
-- Status","1. Edit form opens
-2. Changes save
-3. Success message shown",,
-MU_010,Mobile Users,Verify duplicate email prevention,"1. Create user with existing email
-2. Attempt to save","Use email of existing user","1. Error message shown
-2. Save prevented
-3. Validation message",,
-MU_011,Mobile Users,Verify pagination,"1. Add multiple users
-2. Navigate pages
-3. Change items per page","Add >10 users
-Try 10,25,50 per page","1. Pagination controls work
-2. Items per page updates
-3. Page count correct",,
-MU_012,Mobile Users,Verify user deactivation,"1. Click deactivate icon
-2. Confirm action
-3. Check status update","Select active user","1. Confirmation shown
-2. Status changes
-3. Success message",,
-MU_013,Mobile Users,Verify user reactivation,"1. Filter inactive users
-2. Click activate icon
-3. Confirm action","Select inactive user","1. Confirmation shown
-2. Status changes
-3. Success message",,
-MU_014,Mobile Users,Verify role permissions,"1. Login as different roles
-2. Check available actions","Test with:
-- Admin
-- Standard
-- Limited","1. Actions match role
-2. Restrictions enforced
-3. Messages if unauthorized",,
-MU_015,Mobile Users,Verify program access,"1. Create user
-2. Assign programs
-3. Save and verify","Select multiple programs","1. Programs selectable
-2. Access saved
-3. Programs shown in list",,
+- Inactive","1. Default is Active
+2. Toggle works
+3. Status saves correctly",,
+
+CU_009,Create User,Verify Save functionality with valid data,"1. Enter all required fields
+2. Enter optional fields
+3. Click Save
+4. Verify user list update","Complete valid user data:
+- First Name: John
+- Last Name: Smith
+- Email: john.smith@test.com
+- Mobile: +1234567890
+- Role: Standard User
+- Program: HCL
+- Status: Active","1. Save successful
+2. Success message
+3. User list updated
+4. Data matches input",,
+
+CU_010,Create User,Verify Cancel functionality,"1. Enter some data
+2. Click Cancel
+3. Verify form state
+4. Check user list","Partial user data","1. Form closes
+2. No data saved
+3. User list unchanged
+4. No error messages",,
+
+CU_011,Create User,Verify form reset after save,"1. Create and save user
+2. Verify form state
+3. Check if form clears","Valid user data","1. Save successful
+2. Form clears
+3. Ready for new entry",,
+
+CU_012,Create User,Verify field interactions,"1. Tab through fields
+2. Use keyboard shortcuts
+3. Check field focus
+4. Test auto-complete","Tab key
+Enter key
+Field inputs","1. Correct tab order
+2. Shortcuts work
+3. Focus indicators
+4. Auto-complete works",,
+
+CU_013,Create User,Verify error message display,"1. Submit with errors
+2. Check error locations
+3. Verify error clarity
+4. Fix errors and save","Invalid data in multiple fields","1. All errors shown
+2. Clear indicators
+3. Helpful messages
+4. Errors clear on fix",,
+
+CU_014,Create User,Verify concurrent user creation,"1. Open multiple forms
+2. Create users simultaneously
+3. Check data consistency","Multiple user data sets","1. No data mixing
+2. All users saved
+3. No duplicate errors",,
+
+CU_015,Create User,Verify form responsiveness,"1. Resize window
+2. Check mobile view
+3. Verify field layout
+4. Test touch inputs","Different screen sizes
+Mobile devices","1. Responsive layout
+2. Mobile-friendly
+3. Fields accessible
+4. Touch works",,
