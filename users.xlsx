@@ -1,0 +1,106 @@
+Test Case ID,Module,Test Scenario,Test Steps,Test Data,Expected Results,Status,Comments
+MU_001,Mobile Users,Verify login and navigation to Mobile Users section,"1. Navigate to login page
+2. Enter valid username
+3. Enter valid password
+4. Click Sign In
+5. Click Yes on confirmation
+6. Select Program (HCL)
+7. Click Continue
+8. Click Marker Inventory
+9. Click Mobile Users","URL: authentixsoftweb-gzbmbbbzabcugpaw.centralus-01.azurewebsites.net
+Username: mayur.tilva@atxportal.com
+Password: Softweb#123","1. Login successful
+2. Program selection displayed
+3. Mobile Users page loaded
+4. User list grid visible",,
+MU_002,Mobile Users,Verify Create New Mobile User functionality,"1. Click Create User button
+2. Enter First Name
+3. Enter Last Name
+4. Enter Email
+5. Enter Mobile Number
+6. Select Role
+7. Select Program Access
+8. Click Save","First Name: John
+Last Name: Doe
+Email: john.doe@test.com
+Mobile: +1234567890
+Role: Standard User","1. User form opens
+2. All fields accept input
+3. Success message displays
+4. User appears in grid",,
+MU_003,Mobile Users,Verify required field validation,"1. Click Create User
+2. Leave mandatory fields empty
+3. Click Save","Leave First Name, Last Name, Email empty","1. Form shows validation errors
+2. Save button disabled
+3. Error messages displayed",,
+MU_004,Mobile Users,Verify email format validation,"1. Click Create User
+2. Enter invalid email format
+3. Click Save","Email: invalid.email","1. Email field shows error
+2. Save prevented
+3. Validation message shown",,
+MU_005,Mobile Users,Verify mobile number validation,"1. Click Create User
+2. Enter invalid phone format
+3. Click Save","Mobile: 123","1. Mobile field shows error
+2. Save prevented
+3. Validation message shown",,
+MU_006,Mobile Users,Verify user list sorting,"1. Click column headers
+2. Verify sort order
+3. Click again to reverse","Click Email Id, First Name, Last Name headers","1. List sorts ascending
+2. List sorts descending
+3. Sort indicator shown",,
+MU_007,Mobile Users,Verify search functionality,"1. Enter search term
+2. Check filtered results
+3. Clear search","Search terms:
+- Email
+- First Name
+- Last Name","1. Matching users shown
+2. Non-matching hidden
+3. Clear resets list",,
+MU_008,Mobile Users,Verify status filter,"1. Click Status dropdown
+2. Select different statuses
+3. Verify filtered list","Select:
+- All
+- Active
+- Inactive","1. Dropdown works
+2. List filters correctly
+3. Status shown correctly",,
+MU_009,Mobile Users,Verify edit functionality,"1. Click edit icon
+2. Modify fields
+3. Save changes","Update:
+- First Name
+- Last Name
+- Status","1. Edit form opens
+2. Changes save
+3. Success message shown",,
+MU_010,Mobile Users,Verify duplicate email prevention,"1. Create user with existing email
+2. Attempt to save","Use email of existing user","1. Error message shown
+2. Save prevented
+3. Validation message",,
+MU_011,Mobile Users,Verify pagination,"1. Add multiple users
+2. Navigate pages
+3. Change items per page","Add >10 users
+Try 10,25,50 per page","1. Pagination controls work
+2. Items per page updates
+3. Page count correct",,
+MU_012,Mobile Users,Verify user deactivation,"1. Click deactivate icon
+2. Confirm action
+3. Check status update","Select active user","1. Confirmation shown
+2. Status changes
+3. Success message",,
+MU_013,Mobile Users,Verify user reactivation,"1. Filter inactive users
+2. Click activate icon
+3. Confirm action","Select inactive user","1. Confirmation shown
+2. Status changes
+3. Success message",,
+MU_014,Mobile Users,Verify role permissions,"1. Login as different roles
+2. Check available actions","Test with:
+- Admin
+- Standard
+- Limited","1. Actions match role
+2. Restrictions enforced
+3. Messages if unauthorized",,
+MU_015,Mobile Users,Verify program access,"1. Create user
+2. Assign programs
+3. Save and verify","Select multiple programs","1. Programs selectable
+2. Access saved
+3. Programs shown in list",,
